@@ -1,0 +1,286 @@
+{
+  "timestamp": "2026-09-03T09:57:03.702825+00:00",
+  "test_dataset": "C:\\Users\\Chetna\\Documents\\Codex\\2026-09-03\\bank-assistant-chat-bot-whole-plane\\evaluation\\test_queries.json",
+  "model_artifact": "C:\\Users\\Chetna\\Documents\\Codex\\2026-09-03\\bank-assistant-chat-bot-whole-plane\\models\\intent_classifier.joblib",
+  "total_queries": 45,
+  "top1_hits": 41,
+  "top1_accuracy": 0.9111,
+  "top3_hits": 43,
+  "top3_accuracy": 0.9556,
+  "num_mismatches": 4,
+  "mismatches": [
+    {
+      "query": "UPI failed refund not received after 3 days",
+      "normalized": "upi_problem refund not received after 3 days",
+      "expected": "UPI_PROBLEM",
+      "predicted": "COMPLAINT",
+      "confidence": 0.1074,
+      "top_intents": [
+        {
+          "intent": "COMPLAINT",
+          "confidence": 0.1074
+        },
+        {
+          "intent": "BANKING_FRAUD",
+          "confidence": 0.0939
+        },
+        {
+          "intent": "ATM_TRANSACTION_PROBLEM",
+          "confidence": 0.0813
+        }
+      ]
+    },
+    {
+      "query": "Business expand karne ke liye MUDRA loan kaise le",
+      "normalized": "business expand karne ke liye mudra loan kaise le",
+      "expected": "BUSINESS_SCHEME",
+      "predicted": "BUSINESS_LOAN",
+      "confidence": 0.3864,
+      "top_intents": [
+        {
+          "intent": "BUSINESS_LOAN",
+          "confidence": 0.3864
+        },
+        {
+          "intent": "BUSINESS_SCHEME",
+          "confidence": 0.1397
+        },
+        {
+          "intent": "HOME_LOAN",
+          "confidence": 0.0761
+        }
+      ]
+    },
+    {
+      "query": "NPS scheme me retirement ke liye kitna invest karna chahiye",
+      "normalized": "national_pension_system scheme me retirement ke liye kitna invest karna chahiye",
+      "expected": "PENSION_SCHEME",
+      "predicted": "INVESTMENT_INFORMATION",
+      "confidence": 0.0724,
+      "top_intents": [
+        {
+          "intent": "INVESTMENT_INFORMATION",
+          "confidence": 0.0724
+        },
+        {
+          "intent": "BUSINESS_SCHEME",
+          "confidence": 0.065
+        },
+        {
+          "intent": "STUDENT_SCHEME",
+          "confidence": 0.056
+        }
+      ]
+    },
+    {
+      "query": "Salary 50000 hai kya 30 lakh home loan mil sakta hai",
+      "normalized": "salary 50000 hai kya 30 lakh home_loan mil sakta hai",
+      "expected": "LOAN_ELIGIBILITY",
+      "predicted": "HOME_LOAN",
+      "confidence": 0.2092,
+      "top_intents": [
+        {
+          "intent": "HOME_LOAN",
+          "confidence": 0.2092
+        },
+        {
+          "intent": "LOAN_ELIGIBILITY",
+          "confidence": 0.0941
+        },
+        {
+          "intent": "SAVINGS_ACCOUNT",
+          "confidence": 0.0612
+        }
+      ]
+    }
+  ],
+  "classification_report": {
+    "AGRICULTURE_LOAN": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "ATM_TRANSACTION_PROBLEM": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "BANKING_FRAUD": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "BANK_COMPARISON": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "BUSINESS_LOAN": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1-score": 0.6666666666666666,
+      "support": 1.0
+    },
+    "BUSINESS_SCHEME": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.8,
+      "support": 3.0
+    },
+    "COMPLAINT": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.8,
+      "support": 2.0
+    },
+    "CURRENT_ACCOUNT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "EDUCATION_LOAN": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "EMI_CALCULATION": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "FARMER_SCHEME": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "FIXED_DEPOSIT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "GENERAL_BANKING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "HOME_LOAN": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1-score": 0.6666666666666666,
+      "support": 1.0
+    },
+    "INSURANCE_SCHEME": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "INVESTMENT_INFORMATION": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1-score": 0.6666666666666666,
+      "support": 1.0
+    },
+    "LOAN_DOCUMENTS": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "LOAN_ELIGIBILITY": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "OTP_SAFETY": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "PENSION_SCHEME": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "PERSONAL_LOAN": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "PRODUCT_COMPARISON": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "RECURRING_DEPOSIT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "SAVINGS_ACCOUNT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "SAVINGS_DECISION": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "STUDENT_SCHEME": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "UPI_PROBLEM": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "WOMEN_SCHEME": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "ZERO_BALANCE_ACCOUNT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "accuracy": 0.9111111111111111,
+    "macro avg": {
+      "precision": 0.9367816091954022,
+      "recall": 0.9367816091954022,
+      "f1-score": 0.9172413793103448,
+      "support": 45.0
+    },
+    "weighted avg": {
+      "precision": 0.9518518518518517,
+      "recall": 0.9111111111111111,
+      "f1-score": 0.9111111111111111,
+      "support": 45.0
+    }
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "metadata": {
+    "title": "BankSathi Intent Classification Dataset",
+    "description": "Natural language banking queries in English, Hindi, and Hinglish for Indian banking intent classification.",
+    "version": "1.0.0",
+    "last_updated": "2026-09-03"
+  },
+  "intents": [
+    {
+      "intent": "ZERO_BALANCE_ACCOUNT",
+      "examples": [
+        "I need a zero balance bank account",
+        "Which bank offers zero balance account without charges?",
+        "How to open Jan Dhan account?",
+        "PMJDY zero balance account details",
+        "Mujhe aisa khata chahiye jisme minimum balance na rakhna pade",
+        "Bina minimum balance wala account kholna hai",
+        "Can I open an account with zero initial deposit?",
+        "No minimum balance savings account opening process",
+        "Aisa account jisme penalty na lage balance kam hone par",
+        "Zero balance account ke kya fayde hain",
+        "Basic savings bank deposit account BSBD information",
+        "Pradhan Mantri Jan Dhan Yojana account requirements"
+      ]
+    },
+    {
+      "intent": "SAVINGS_ACCOUNT",
+      "examples": [
+        "How to open a savings account?",
+        "What is the interest rate on savings bank account?",
+        "What are the documents needed for opening a regular savings account?",
+        "Savings account opening minimum balance limit",
+        "Naya savings khata kaise kholein",
+        "Bachat khata kholne ke niyam kya hain",
+        "Normal savings account vs salary account",
+        "How much interest do banks give on savings account?",
+        "Savings account ke liye Aadhar and PAN card zaroori hai kya",
+        "Can a student open a normal savings account?"
+      ]
+    },
+    {
+      "intent": "CURRENT_ACCOUNT",
+      "examples": [
+        "How to open a current account for business?",
+        "What is the minimum balance required in a current account?",
+        "Current account for proprietorship firm documents required",
+        "Vyapar ke liye current account kaise kholte hain",
+        "Shop ke naam par current khata kholna hai",
+        "Difference between savings account and current account",
+        "Can I get an overdraft facility on my current account?",
+        "Current account transaction limits in banks"
+      ]
+    },
+    {
+      "intent": "FIXED_DEPOSIT",
+      "examples": [
+        "What are the current FD interest rates?",
+        "Fixed deposit interest rates for senior citizens",
+        "How safe is my fixed deposit in the bank?",
+        "Can I break my FD before maturity?",
+        "FD me kitna byaj milta hai",
+        "Bank me FD karane ka tareeka",
+        "What is the penalty for premature FD withdrawal?",
+        "Tax saving fixed deposit for 5 years",
+        "FD vs normal savings account returns",
+        "DICGC insurance on bank fixed deposit"
+      ]
+    },
+    {
+      "intent": "RECURRING_DEPOSIT",
+      "examples": [
+        "How does a recurring deposit work?",
+        "What is the minimum monthly deposit for RD?",
+        "RD interest rate for 1 year",
+        "Har mahine thoda paisa jama karne ke liye RD account",
+        "Recurring deposit me monthly installment kaise kat ta hai",
+        "Can I open RD online in mobile banking?",
+        "RD premature withdrawal rules and penalty",
+        "Difference between FD and recurring deposit"
+      ]
+    },
+    {
+      "intent": "EDUCATION_LOAN",
+      "examples": [
+        "Tell me about education loans for higher studies",
+        "How to apply for education loan on Vidya Lakshmi portal?",
+        "Education loan interest rate for engineering college",
+        "Abroad study education loan collateral requirements",
+        "Padhai ke liye education loan kaise milega",
+        "Student ke college fees ke liye loan chahiye",
+        "Moratorium period in education loan",
+        "Does government provide interest subsidy on education loan?",
+        "Education loan without collateral security up to 7.5 lakh",
+        "Documents required for student study loan"
+      ]
+    },
+    {
+      "intent": "HOME_LOAN",
+      "examples": [
+        "What is the interest rate for a home loan?",
+        "How much home loan can I get on my salary?",
+        "Home loan process for buying a new flat",
+        "Ghar khareedne ke liye home loan chahiye",
+        "Makaan banane ke liye bank se loan kaise le",
+        "Maximum tenure for housing loan in SBI and HDFC",
+        "Prepayment charges on floating rate home loan",
+        "Pradhan Mantri Awas Yojana subsidy on home loan",
+        "Tax benefits under 80C on home loan repayment",
+        "Documents needed for home loan sanction"
+      ]
+    },
+    {
+      "intent": "PERSONAL_LOAN",
+      "examples": [
+        "How to get an urgent personal loan?",
+        "What is the interest rate on unsecured personal loan?",
+        "Personal loan eligibility for private company employees",
+        "Emergency personal loan for medical expenses",
+        "Personal loan ke liye CIBIL score kitna hona chahiye",
+        "Bina collateral ke personal loan kaise milta hai",
+        "Maximum repayment tenure for personal loans",
+        "Processing fees on personal loan",
+        "Immediate personal loan app safety"
+      ]
+    },
+    {
+      "intent": "BUSINESS_LOAN",
+      "examples": [
+        "I need a loan to expand my business",
+        "Commercial loan for small manufacturing unit",
+        "Working capital loan for retail shop",
+        "Business loan interest rate and collateral criteria",
+        "Dukaan badhane ke liye business loan chahiye",
+        "Apne vyapar ke liye bank se bada loan kaise le",
+        "MSME collateral free business loan schemes",
+        "Turnover requirements for business loan"
+      ]
+    },
+    {
+      "intent": "AGRICULTURE_LOAN",
+      "examples": [
+        "How to apply for Kisan Credit Card KCC loan?",
+        "Crop loan interest subvention for farmers",
+        "Agriculture term loan for buying tractor",
+        "Kheti ke liye kisan loan kaise milta hai",
+        "KCC par interest rate kitna hota hai",
+        "Fasal ke liye bank se udhaar chahiye",
+        "Kisan Credit Card renewal and limit enhancement",
+        "Documents needed for agriculture land mortgage loan"
+      ]
+    },
+    {
+      "intent": "LOAN_ELIGIBILITY",
+      "examples": [
+        "Am I eligible for a bank loan?",
+        "How do banks calculate my loan eligibility?",
+        "Minimum salary required for 20 lakh loan",
+        "Mera CIBIL score 720 hai kya mujhe loan milega",
+        "Age limit for applying for bank loan",
+        "Can a self employed person get a loan without ITR?",
+        "What factors affect personal loan approval?",
+        "Loan eligibility criteria explained"
+      ]
+    },
+    {
+      "intent": "LOAN_DOCUMENTS",
+      "examples": [
+        "What documents are needed to apply for a loan?",
+        "List of documents for home loan verification",
+        "Is ITR mandatory for getting a bank loan?",
+        "Loan lene ke liye kaun kaun se kagaz chahiye",
+        "Bank statement and salary slip requirement for loan",
+        "KYC documents required for loan processing",
+        "Property papers needed for mortgage loan"
+      ]
+    },
+    {
+      "intent": "BUSINESS_SCHEME",
+      "examples": [
+        "What government schemes are available for small business?",
+        "How to apply for Pradhan Mantri MUDRA loan?",
+        "MUDRA loan Shishu Kishor Tarun category limits",
+        "Government subsidy loan for new startup",
+        "Chhoti dukaan ke liye sarkari scheme kaun si hai",
+        "Mudra loan me kitna paisa milta hai aur kaise apply karein",
+        "PMEGP scheme subsidy details for business",
+        "Is collateral required for MUDRA loan up to 10 lakh?",
+        "Government credit support schemes for entrepreneurs"
+      ]
+    },
+    {
+      "intent": "STUDENT_SCHEME",
+      "examples": [
+        "Government schemes for students higher education",
+        "Central Sector Interest Subsidy CSIS scheme for education",
+        "Scholarship and education loan schemes by government",
+        "Garib chatron ke liye sarkari padhai loan scheme",
+        "Padho Pardesh interest subsidy scheme",
+        "Vidya Lakshmi portal government education schemes"
+      ]
+    },
+    {
+      "intent": "FARMER_SCHEME",
+      "examples": [
+        "What government schemes are available for farmers?",
+        "PM Kisan Samman Nidhi Yojana details",
+        "Kisan Credit Card scheme benefits and interest relief",
+        "Kisano ke liye sarkari bima aur loan yojana",
+        "Pradhan Mantri Fasal Bima Yojana crop insurance",
+        "Agriculture infrastructure fund government scheme"
+      ]
+    },
+    {
+      "intent": "WOMEN_SCHEME",
+      "examples": [
+        "Government schemes for women entrepreneurs",
+        "Stand-Up India loan scheme for women",
+        "Mahila udyamiyo ke liye bank loan yojana",
+        "Women business loan with low interest rate",
+        "Mudra loan special provisions for women",
+        "Sukanya Samriddhi Yojana account for girl child"
+      ]
+    },
+    {
+      "intent": "PENSION_SCHEME",
+      "examples": [
+        "How to join Atal Pension Yojana APY?",
+        "What is the monthly pension in APY scheme?",
+        "National Pension System NPS investment rules",
+        "Budhape ke liye sarkari pension yojana kaun si hai",
+        "Atal Pension Yojana eligibility age limit 18 to 40",
+        "NPS Tier 1 vs Tier 2 account difference",
+        "Guaranteed minimum pension schemes in India"
+      ]
+    },
+    {
+      "intent": "INSURANCE_SCHEME",
+      "examples": [
+        "Pradhan Mantri Suraksha Bima Yojana PMSBY details",
+        "Pradhan Mantri Jeevan Jyoti Bima Yojana PMJJBY life cover",
+        "Sarkari 20 rupaye wala accident bima scheme",
+        "Low cost government life and accident insurance",
+        "How to claim PMSBY insurance in case of accident?",
+        "Jansuraksha bima yojana registration through bank"
+      ]
+    },
+    {
+      "intent": "SAVINGS_DECISION",
+      "examples": [
+        "I have 2 lakh rupees where should I safely invest?",
+        "Should I put my money in FD or PPF?",
+        "Safe savings options with decent returns",
+        "Mere paas 5 lakh hain safe investment chahiye",
+        "How to decide between fixed deposit and mutual funds?",
+        "Low risk savings options for short term emergency fund",
+        "Best place to save money for 3 years without risk"
+      ]
+    },
+    {
+      "intent": "INVESTMENT_INFORMATION",
+      "examples": [
+        "What is Public Provident Fund PPF scheme?",
+        "Sukanya Samriddhi Account interest rate and lock in",
+        "Is NPS a good long term retirement investment?",
+        "Tax saving investment options under section 80C",
+        "PPF account opening rules and 15 year lock in",
+        "Sovereign gold bond vs gold ETF in bank"
+      ]
+    },
+    {
+      "intent": "PRODUCT_COMPARISON",
+      "examples": [
+        "Compare FD and RD which is better?",
+        "Difference between PPF and fixed deposit",
+        "Comparison between NPS and Atal Pension Yojana",
+        "Fixed deposit vs Public Provident Fund returns comparison",
+        "FD aur RD me kya antar hai",
+        "Sukanya Samriddhi vs PPF for girl child"
+      ]
+    },
+    {
+      "intent": "BANK_COMPARISON",
+      "examples": [
+        "Compare SBI and HDFC bank savings account",
+        "Which bank is better for home loan SBI or ICICI?",
+        "Public sector bank vs private bank safety comparison",
+        "SBI vs PNB fixed deposit interest rates",
+        "Kon sa bank best hai savings account kholne ke liye"
+      ]
+    },
+    {
+      "intent": "EMI_CALCULATION",
+      "examples": [
+        "Calculate EMI for 5 lakh loan at 10% for 5 years",
+        "10 lakh loan at 9 percent for 5 years ki EMI kitni hogi?",
+        "What will be the monthly payment for 25 lakh home loan?",
+        "EMI calculator for car loan 7 lakh 8.5% 3 years",
+        "How much monthly installment for 1 lakh personal loan?",
+        "Calculate total interest on 500000 loan",
+        "EMI formula and payment schedule calculation"
+      ]
+    },
+    {
+      "intent": "UPI_PROBLEM",
+      "examples": [
+        "UPI payment failed but money debited from account",
+        "Google Pay transaction stuck and money cut from bank",
+        "PhonePe se paisa cut gaya lekin receiver ko nahi mila",
+        "UPI transaction pending what should I do?",
+        "Within how much time will failed UPI money be refunded?",
+        "Auto refund timeline for failed UPI transaction RBI rule",
+        "How to report failed UPI transaction to bank"
+      ]
+    },
+    {
+      "intent": "ATM_TRANSACTION_PROBLEM",
+      "examples": [
+        "ATM se cash nahi nikla but account se paisa kat gaya",
+        "ATM cash not dispensed but balance deducted",
+        "Money debited from ATM without getting cash",
+        "ATM machine error cash didn't come out",
+        "How many days bank takes to refund failed ATM transaction?",
+        "RBI compensation rule for ATM cash deduction without dispensing",
+        "Complaint for ATM money deduction failure"
+      ]
+    },
+    {
+      "intent": "BANKING_FRAUD",
+      "examples": [
+        "Money was stolen from my account without my permission",
+        "Unauthorized transaction happened on my debit card",
+        "Cyber crime reported unauthorized debit",
+        "Mere khate se unauthorized transaction ho gaya",
+        "I clicked a phishing link and money got deducted",
+        "How to freeze bank account after online fraud?",
+        "National cyber crime reporting portal helpline 1930"
+      ]
+    },
+    {
+      "intent": "OTP_SAFETY",
+      "examples": [
+        "Someone called asking for my bank OTP",
+        "Can I share OTP with bank branch manager?",
+        "Fake caller asked for CVV and OTP for KYC update",
+        "Bank wale OTP maang rahe hain kya share karun?",
+        "Never share OTP PIN password warning",
+        "Is it safe to share UPI PIN to receive money?",
+        "Someone asking for remote access app AnyDesk for bank KYC"
+      ]
+    },
+    {
+      "intent": "COMPLAINT",
+      "examples": [
+        "How to file a complaint against my bank?",
+        "Bank manager is not helping where can I escalate?",
+        "How to lodge complaint with RBI Integrated Ombudsman?",
+        "RBI Banking Ombudsman portal CMS complaint process",
+        "Bank me sunwai nahi ho rahi grievance redressal kaise karein",
+        "Escalation matrix for unresolved banking complaints",
+        "No response from bank for 30 days how to complain to RBI"
+      ]
+    },
+    {
+      "intent": "GENERAL_BANKING",
+      "examples": [
+        "Namaste how can you help me?",
+        "What banking services do you provide information on?",
+        "Hello BankSathi",
+        "Bank opening timings and Saturday holidays",
+        "What is NEFT RTGS and IMPS transfer timing?",
+        "Aap meri kya madad kar sakte hain banking me?"
+      ]
+    }
+  ]
+}

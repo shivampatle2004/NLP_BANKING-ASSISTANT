@@ -1,0 +1,30 @@
+# BankSathi — Python Dependencies
+# Install: pip install -r requirements.txt
+
+# Backend framework
+fastapi==0.115.0
+uvicorn==0.30.6
+
+# NLP — Intent Classification (Phase 4)
+scikit-learn==1.5.1
+
+# NLP — Entity Extraction (Phase 5)
+spacy==3.7.6
+
+# NLP — Semantic Embeddings (Phase 7)
+sentence-transformers==3.0.1
+
+# Vector Search (Phase 7)
+faiss-cpu==1.8.0.post1
+
+# Core utilities
+numpy==1.26.4
+pandas==2.2.2
+joblib==1.4.2
+
+# Testing
+pytest==8.3.2
+httpx==0.27.0
+
+# Note: After installing, also run:
+# python -m spacy download en_core_web_sm
