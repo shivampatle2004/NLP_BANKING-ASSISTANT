@@ -1,37 +1,70 @@
-# BankSathi — Final Year Project Brief
+# BankSathi — Final Project Report & Architectural Specification
 
-## Problem statement
+## 1. Problem Statement & Motivation
+Indian retail banking customers face steep challenges when choosing accounts, understanding fluctuating loan rates, navigating dozens of government financial-inclusion schemes, and securing their money against cyber scams. Information is siloed across separate bank portals with confusing jargon.
 
-People frequently need help choosing banking products or identifying government financial-inclusion schemes, but information is scattered and product language is difficult. BankSathi is an educational, India-focused chatbot that translates a user’s plain-language goal into a short, source-linked list of relevant banking options.
+**BankSathi** solves this by providing a **One-Stop Banking Decision & Problem Assistant** that combines:
+1. Explainable NLP Intent Classification with English, Hindi, and Hinglish query support.
+2. Structured real-world benchmark data across **8 major Indian banks** (*State Bank of India, HDFC Bank, ICICI Bank, Punjab National Bank, Bank of Baroda, Axis Bank, Kotak Mahindra Bank, and Canara Bank*).
+3. Side-by-side comparison across Savings MAB, Fixed Deposit (FD) returns, Loan APRs, and ATM limits.
+4. Personalized Government Scheme Matching (*PMJDY, MUDRA, PMSBY, PMJJBY, APY, Sukanya, KCC*).
+5. Transparent Loan EMI estimation.
+6. 24x7 Emergency Desk for instant SMS card blocking and cybercrime (1930) reporting.
 
-## Proposed solution
+---
 
-The client-side single-page application has three modules: an NLP chatbot, a profile-based scheme finder and an EMI planner. It stores no personal data and makes no real-time bank decision. The system treats every answer as an explanation and routes the user to the relevant official authority to verify current terms.
+## 2. System Architecture
 
-## NLP methodology
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        User Interface (Web)                            │
+│  [💬 Conversational Assistant] [⇋ Bank Plan Selector] [⌕ Scheme Finder] │
+│  [▣ Loan EMI Planner]          [🚨 Emergency & Fraud Desk]             │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ HTTP / Local Store
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                        FastAPI Backend Layer                           │
+│  - GET /api/banks               - POST /api/banks/compare              │
+│  - GET /api/banks/{bank_id}     - GET  /api/rates/best                 │
+│  - POST /api/intent/predict     - GET  /health                         │
+└───────────────────┬───────────────────────────────┬────────────────────┘
+                    │                               │
+                    ▼                               ▼
+┌──────────────────────────────────────┐ ┌───────────────────────────────┐
+│     NLP & Intent Engine              │ │     Data & Knowledge Store    │
+│  - Language Detector (English/Hindi) │ │  - data/banks-data.json       │
+│  - Preprocessing & Entity Extractor  │ │  - data/banking-knowledge.json│
+│  - TF-IDF + Logistic Regression      │ │  - Schema Validators          │
+│  - 29 Fine-Grained Banking Intents   │ │                               │
+└──────────────────────────────────────┘ └───────────────────────────────┘
+```
 
-1. **Normalisation:** query is lower-cased, punctuation is removed and tokens are extracted.
-2. **Hinglish synonym expansion:** words such as `khata`, `dukkan`, `bima`, `kisan` and `udhaar` map to common banking concepts.
-3. **Intent classification:** deterministic rules identify safety, EMI, recommendation, greeting and knowledge intents.
-4. **Entity/relevance scoring:** query terms are compared with each scheme’s name, category, tags, summary and eligibility field. Highest-scoring entries are returned.
-5. **Explainable response:** answer displays the selected scheme, reason/eligibility summary and an official source rather than hiding the basis in a black-box model.
+---
 
-## Dataset design
+## 3. Dataset Design
 
-`data/banking-knowledge.json` contains 18 records across financial inclusion, deposits, loans, government schemes, insurance, pension, investments and consumer protection. Each record has an ID, tags, human-readable eligibility, benefits, official source, authority and verification date. Live rates and changing fees are deliberately excluded.
+1. **`data/banks-data.json`**:
+   - Covers 8 top Indian banks with verified benchmark fields: Minimum Average Balance (Metro/Urban/Rural), Savings rates, 1-Yr / 3-Yr / 5-Yr FD rates (General & Senior Citizens), Home/Personal/Education/Car loan starting rates, ATM daily limits, 24x7 toll-free contacts, and instant SMS card-block templates.
 
-## Safety and ethics
+2. **`data/banking-knowledge.json`**:
+   - 18 curated, source-attributed entries covering financial inclusion, insurance, pension, business loans, and consumer protection.
 
-- No user data is sent to a server or retained.
-- The interface warns against sharing OTP, PIN, CVV, passwords and account numbers.
-- It never claims loan approval, confirms scheme eligibility, or gives personalised investment/tax/legal advice.
-- Sources, last-verification dates and limitations are visible in the dataset.
-- Production use requires a scheduled review of each official source and accessibility/usability tests with diverse users.
+---
 
-## Evaluation plan
+## 4. NLP Methodology & Performance
 
-Create a labelled set of 50 test questions (10 per intent). Measure intent accuracy and top-3 scheme retrieval accuracy. Conduct a small usability study asking participants to complete tasks such as finding a zero-balance account, a farmer credit option and the correct complaint route. Track task completion, time and perceived clarity. Analyse unmatched questions to extend synonyms/tags.
+- **Preprocessing**: Multi-word phrase canonicalization, abbreviation normalization (KCC, APY, PMJDY, FD, RD), and financial number extraction (Lakhs, Crores, percentages, tenures).
+- **Intent Classifier**: TF-IDF + Logistic Regression trained on 223 multi-lingual samples across 29 classes.
+- **Evaluation Benchmark** (on 45 held-out test queries):
+  - **Top-1 Accuracy**: **91.11%** (41 / 45)
+  - **Top-3 Accuracy**: **95.56%** (43 / 45)
+  - **Total Mismatches**: 4
 
-## Limitations and future work
+---
 
-This demonstrator uses rules rather than a trained transformer and does not integrate bank APIs. Future versions can add multilingual Indian-language models, retrieval from officially maintained APIs, authentication with consent, a database audit trail, accessibility localisation and human banker escalation.
+## 5. Security, Ethics & Governance
+
+- **Zero-Storage of Sensitive Data**: The application collects no account numbers, PINs, passwords, or OTPs.
+- **Clear Disclaimers**: Answers are strictly educational and decision-supportive, not loan approval confirmations or investment advice.
+- **Direct Official Verification**: Every single bank and scheme result includes clickable links to official bank portals and government websites.

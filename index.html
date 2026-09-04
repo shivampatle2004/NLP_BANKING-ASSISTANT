@@ -1,6 +1,316 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BankSathi | Banking Decision Assistant</title><link rel="stylesheet" href="styles.css"></head><body>
-<main><aside><div class="brand"><span>₹</span><div><h1>BankSathi</h1><p>Banking decision assistant</p></div></div><div class="status"><i></i> Educational mode · India</div><nav><button class="nav active" data-view="chat">◉ Assistant</button><button class="nav" data-view="finder">⌕ Scheme Finder</button><button class="nav" data-view="calculator">▣ EMI Calculator</button></nav><div class="sidebar-note">Your financial data stays in your browser. Never share OTP, PIN, CVV, passwords, or account numbers.</div></aside>
-<section class="panel" id="chat"><header><div><p class="eyebrow">EXPLAINABLE NLP CHATBOT</p><h2>How can I help with your banking decision?</h2></div><button class="outline" id="clearChat">Clear chat</button></header><div class="chips"><button>Need a zero-balance account</button><button>Which scheme for a small business?</button><button>Is my FD protected?</button><button>How can I report a UPI scam?</button></div><div class="conversation" id="conversation"></div><form id="chatForm"><input id="question" autocomplete="off" placeholder="Ask in English or Hinglish… e.g., student ke liye education loan"><button aria-label="Send">↑</button></form><p class="footnote">Answers are informational, not bank approval, legal, tax, or investment advice. Verify terms with the official source.</p></section>
-<section class="panel hidden" id="finder"><header><div><p class="eyebrow">PERSONALISED SHORTLIST</p><h2>Find relevant banking schemes</h2></div></header><form class="finder-form" id="finderForm"><label>What do you need?<select name="need"><option value="saving">Savings or bank account</option><option value="insurance">Insurance / protection</option><option value="pension">Pension / retirement</option><option value="business">Business funding</option><option value="education">Education funding</option><option value="farmer">Agriculture credit</option></select></label><label>Age<input name="age" type="number" min="1" max="120" placeholder="e.g. 25"></label><label>Profile<select name="profile"><option value="general">General</option><option value="student">Student</option><option value="woman">Woman entrepreneur</option><option value="farmer">Farmer</option><option value="unbanked">No existing bank account</option></select></label><button>Find options</button></form><div id="results" class="results"></div></section>
-<section class="panel hidden" id="calculator"><header><div><p class="eyebrow">LOAN PLANNING TOOL</p><h2>Estimate your EMI</h2></div></header><div class="calc"><form id="emiForm"><label>Loan amount (₹)<input name="amount" type="number" value="500000" min="1"></label><label>Annual interest rate (%)<input name="rate" type="number" value="10" min="0" step="0.01"></label><label>Tenure (years)<input name="years" type="number" value="5" min="1" max="40"></label><button>Calculate EMI</button></form><div class="emi-card"><p>Estimated monthly EMI</p><strong id="emi">₹10,624</strong><hr><div><span>Total payment</span><b id="total">₹6,37,440</b></div><div><span>Total interest</span><b id="interest">₹1,37,440</b></div><small>This is an estimate. It excludes fees, insurance, taxes, variable-rate changes and missed-payment charges.</small></div></div></section>
-</main><template id="welcome"><article class="bot"><div class="avatar">₹</div><div class="bubble"><strong>Namaste! I’m BankSathi.</strong><p>I can explain accounts, loans, deposits, government schemes, pension, insurance and safe banking. Try: <em>“I am 28 and starting a small shop”</em>.</p></div></article></template><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BankSathi — One-Stop Indian Banking & Decision Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge">₹</div>
+        <div class="brand-text">
+          <h1>BankSathi</h1>
+          <p>One-Stop Banking Assistant</p>
+        </div>
+      </div>
+      
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span id="backendStatus">Live Data · 8 Major Banks</span>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-view="chat">
+          <span class="nav-icon">💬</span>
+          <span class="nav-label">Conversational Assistant</span>
+        </button>
+        <button class="nav-item" data-view="banks">
+          <span class="nav-icon">⇋</span>
+          <span class="nav-label">Bank Plan Selector & Compare</span>
+        </button>
+        <button class="nav-item" data-view="finder">
+          <span class="nav-icon">⌕</span>
+          <span class="nav-label">Govt Schemes & Welfare</span>
+        </button>
+        <button class="nav-item" data-view="calculator">
+          <span class="nav-icon">▣</span>
+          <span class="nav-label">Loan EMI Planner</span>
+        </button>
+        <button class="nav-item" data-view="emergency">
+          <span class="nav-icon">🚨</span>
+          <span class="nav-label">Emergency & Fraud Help</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-security">
+        <div class="security-title">🔒 Privacy & Safety Notice</div>
+        <p>No personal account data is ever collected. Never share your OTP, PIN, CVV, or passwords with anyone.</p>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Panel 1: NLP Conversational Chatbot -->
+      <section class="panel active" id="chat">
+        <header class="panel-header">
+          <div>
+            <span class="tag-badge">Explainable AI</span>
+            <h2>How can I help with your banking decision today?</h2>
+            <p class="panel-subtitle">Ask in English, Hindi (Devanagari), or casual Hinglish about any bank, loan, FD, scheme, or problem.</p>
+          </div>
+          <button class="btn-secondary" id="clearChat">Clear Chat</button>
+        </header>
+
+        <div class="quick-chips">
+          <button class="chip">Compare SBI vs HDFC FD rates</button>
+          <button class="chip">Which bank offers zero minimum balance?</button>
+          <button class="chip">ATM se cash nahi nikla but paisa kat gaya</button>
+          <button class="chip">Dukaan ke liye MUDRA loan chahiye</button>
+          <button class="chip">Someone called asking for my bank OTP</button>
+        </div>
+
+        <div class="chat-viewport" id="conversation"></div>
+
+        <form class="chat-input-bar" id="chatForm">
+          <div class="input-autocomplete-wrapper">
+            <label for="question" class="sr-only" style="display:none;">Ask a banking question</label>
+            <input 
+              id="question" 
+              type="text" 
+              autocomplete="off" 
+              aria-label="Ask a banking question"
+              placeholder="Ask anything... e.g. 'Compare SBI vs HDFC FD', 'Age to open account', or 'Highest FD rate'"
+            >
+            <div id="autocompleteDropdown" class="autocomplete-dropdown hidden"></div>
+          </div>
+          <button type="submit" class="btn-send" aria-label="Send query">
+            <span>Send</span> ↑
+          </button>
+        </form>
+        <p class="disclaimer-note">Educational decision support only. Terms change; verify rates directly on official bank portals.</p>
+      </section>
+
+      <!-- Panel 2: Multi-Bank Plan Selector & Comparison -->
+      <section class="panel hidden" id="banks">
+        <header class="panel-header">
+          <div>
+            <span class="tag-badge">Multi-Bank Intelligence</span>
+            <h2>Select & Compare Bank Plans According to Your Need</h2>
+            <p class="panel-subtitle">Real verified benchmark data across 18 major Indian National, Private, Small Finance, International, and Payments Banks.</p>
+          </div>
+        </header>
+
+        <!-- Filter Controls -->
+        <div class="filter-toolbar">
+          <div class="filter-group">
+            <label for="bankProductFilter">Choose Product to Compare:</label>
+            <select id="bankProductFilter" class="select-input">
+              <option value="all">All Products (Full Overview)</option>
+              <option value="savings">Savings Account (Minimum Balance & Rates)</option>
+              <option value="fd">Fixed Deposit (1-Yr, 3-Yr, 5-Yr Rates)</option>
+              <option value="loans">Loans (Home, Personal, Education)</option>
+              <option value="cards">Debit Cards & Daily ATM Limits</option>
+              <option value="support">Customer Care & Emergency Helplines</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="bankTypeFilter">Bank Sector:</label>
+            <select id="bankTypeFilter" class="select-input">
+              <option value="all">All Bank Sectors (18 Banks)</option>
+              <option value="Public Sector">Public Sector PSUs (SBI, PNB, BOB, Canara, Union, Indian, BOI)</option>
+              <option value="Private Sector">Private Sector (HDFC, ICICI, Axis, Kotak, IndusInd, IDFC)</option>
+              <option value="Small Finance Bank">Small Finance Banks (AU SFB, Equitas - High Yields)</option>
+              <option value="Foreign / International">Foreign / International (StanChart, HSBC)</option>
+              <option value="Payments Bank">Payments Banks (IPPB - Doorstep Banking)</option>
+            </select>
+          </div>
+
+          <div class="toggle-group" id="seniorCitizenContainer">
+            <label class="toggle-label" for="seniorCitizenToggle">
+              <input type="checkbox" id="seniorCitizenToggle">
+              <span class="toggle-slider"></span>
+              Senior Citizen FD (+0.50% - 0.75% extra)
+            </label>
+          </div>
+        </div>
+
+        <!-- Best Rate Ranker Banner -->
+        <div class="best-rate-card" id="bestRateBanner"></div>
+
+        <!-- Bank Cards Container -->
+        <div class="banks-grid" id="banksGrid"></div>
+      </section>
+
+      <!-- Panel 3: Government Financial Inclusion Schemes -->
+      <section class="panel hidden" id="finder">
+        <header class="panel-header">
+          <div>
+            <span class="tag-badge">Financial Inclusion</span>
+            <h2>Find Tailored Government Banking Schemes</h2>
+            <p class="panel-subtitle">Filter official welfare, subsidy, and credit programs by your profile and need.</p>
+          </div>
+        </header>
+
+        <form class="finder-form" id="finderForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="needSelect">What is your primary goal?</label>
+              <select id="needSelect" name="need" class="select-input">
+                <option value="saving">Savings or Basic Bank Account (PMJDY, PPF, Sukanya)</option>
+                <option value="business">Small Business / Shop Funding (MUDRA, Stand-Up India)</option>
+                <option value="insurance">Low-Cost Insurance Protection (PMSBY, PMJJBY)</option>
+                <option value="pension">Retirement & Pension Security (APY, NPS)</option>
+                <option value="education">Higher Education Loans (Vidya Lakshmi)</option>
+                <option value="farmer">Agricultural Credit & Crop Support (KCC)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="ageInput">Your Age (Years)</label>
+              <input id="ageInput" name="age" type="number" min="1" max="120" placeholder="e.g. 28" class="text-input">
+            </div>
+
+            <div class="form-field">
+              <label for="profileSelect">Your Profile</label>
+              <select id="profileSelect" name="profile" class="select-input">
+                <option value="general">General Citizen</option>
+                <option value="student">Student / Youth</option>
+                <option value="woman">Woman Entrepreneur</option>
+                <option value="farmer">Farmer / Agriculturalist</option>
+                <option value="unbanked">Unbanked / No Existing Account</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">Find Eligible Schemes →</button>
+        </form>
+
+        <div id="schemeResults" class="scheme-results-grid"></div>
+      </section>
+
+      <!-- Panel 4: Loan EMI Calculator -->
+      <section class="panel hidden" id="calculator">
+        <header class="panel-header">
+          <div>
+            <span class="tag-badge">Loan Planning Tool</span>
+            <h2>Estimate Your Monthly EMI & Total Interest</h2>
+            <p class="panel-subtitle">Transparent calculation with real bank benchmark comparisons.</p>
+          </div>
+        </header>
+
+        <div class="calc-layout">
+          <form class="calc-form" id="emiForm">
+            <div class="form-field">
+              <label for="loanAmount">Loan Amount (₹)</label>
+              <input name="amount" type="number" value="500000" min="10000" step="10000" class="text-input" id="loanAmount">
+              <div class="quick-amounts">
+                <button type="button" class="btn-chip-amt" data-amt="100000">₹1 Lakh</button>
+                <button type="button" class="btn-chip-amt" data-amt="500000">₹5 Lakh</button>
+                <button type="button" class="btn-chip-amt" data-amt="1000000">₹10 Lakh</button>
+                <button type="button" class="btn-chip-amt" data-amt="2500000">₹25 Lakh</button>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="loanRate">Annual Interest Rate (% p.a.)</label>
+              <input name="rate" type="number" value="8.50" min="1" max="30" step="0.05" class="text-input" id="loanRate">
+              <span class="field-hint">Current major bank Home Loan benchmarks start from 8.40% – 8.75%</span>
+            </div>
+
+            <div class="form-field">
+              <label for="loanTenure">Repayment Tenure (Years)</label>
+              <input name="years" type="number" value="5" min="1" max="35" class="text-input" id="loanTenure">
+            </div>
+
+            <button type="submit" class="btn-primary">Recalculate EMI</button>
+          </form>
+
+          <div class="calc-summary-card">
+            <div class="emi-highlight">
+              <span class="emi-label">Estimated Monthly EMI</span>
+              <strong class="emi-amount" id="emiValue">₹10,258</strong>
+            </div>
+
+            <div class="emi-breakdown">
+              <div class="breakdown-item">
+                <span>Principal Amount</span>
+                <b id="principalValue">₹5,00,000</b>
+              </div>
+              <div class="breakdown-item">
+                <span>Total Interest Payable</span>
+                <b id="interestValue" class="text-warning">₹1,15,499</b>
+              </div>
+              <div class="breakdown-item total-row">
+                <span>Total Amount Payable</span>
+                <b id="totalPaymentValue">₹6,15,499</b>
+              </div>
+            </div>
+
+            <div class="bank-loan-comparison">
+              <h4>Bank Home Loan Benchmark Starting Rates:</h4>
+              <div class="bank-rate-pills">
+                <span class="rate-pill">BOB: <b>8.40%</b></span>
+                <span class="rate-pill">Canara: <b>8.40%</b></span>
+                <span class="rate-pill">PNB: <b>8.45%</b></span>
+                <span class="rate-pill">SBI: <b>8.50%</b></span>
+                <span class="rate-pill">HDFC: <b>8.70%</b></span>
+                <span class="rate-pill">ICICI: <b>8.75%</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 5: Emergency & Fraud Help Desk -->
+      <section class="panel hidden" id="emergency">
+        <header class="panel-header">
+          <div>
+            <span class="tag-badge badge-danger">24x7 Emergency Desk</span>
+            <h2>Instant Fraud Reporting & Card Blocking Numbers</h2>
+            <p class="panel-subtitle">Immediate actions to safeguard your funds if you notice unauthorized transactions or cyber fraud.</p>
+          </div>
+        </header>
+
+        <div class="cyber-alert-banner">
+          <div class="cyber-alert-icon">🛡️</div>
+          <div class="cyber-alert-body">
+            <h3>National Cyber Crime Reporting Helpline: 1930</h3>
+            <p>If money was fraudulently debited via UPI, NetBanking, or card skimming, call <strong>1930</strong> immediately and report at <a href="https://cybercrime.gov.in" target="_blank" rel="noopener">cybercrime.gov.in</a> within the first 2-4 hours ("Golden Hour") to maximize recovery chances.</p>
+          </div>
+        </div>
+
+        <div class="emergency-grid" id="emergencyGrid"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Bot welcome template -->
+  <template id="welcomeMessage">
+    <article class="chat-message bot">
+      <div class="avatar">₹</div>
+      <div class="bubble">
+        <strong>Namaste! I’m BankSathi, your Banking Decision & Problem Assistant.</strong>
+        <p>I can help you with:</p>
+        <ul>
+          <li><strong>Compare 8 Major Banks:</strong> Rates, minimum balance, loan APRs, and charges.</li>
+          <li><strong>Government Schemes:</strong> Jan Dhan, MUDRA, PMSBY, PMJJBY, APY, Sukanya, KCC.</li>
+          <li><strong>Banking Problems:</strong> ATM cash deductions, UPI failures, and cyber fraud reporting.</li>
+          <li><strong>Loan Planning:</strong> Estimate monthly EMIs and interest breakdown.</li>
+        </ul>
+        <p>Try asking: <em>"Which bank has the highest FD rate for senior citizens?"</em> or <em>"Compare SBI vs HDFC home loan"</em>.</p>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

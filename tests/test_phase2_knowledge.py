@@ -80,15 +80,15 @@ class TestRealKnowledgeBase:
         report = validate_knowledge()
         assert report.passed, f"Real KB failed: {[str(i) for i in report.errors]}"
 
-    def test_real_kb_has_18_entries(self):
-        """The real knowledge base should contain exactly 18 entries."""
+    def test_real_kb_has_expected_entries(self):
+        """The real knowledge base should contain exactly 28 entries."""
         report = validate_knowledge()
-        assert report.total_entries == 18
+        assert report.total_entries == 28
 
     def test_real_kb_all_valid(self):
-        """All 18 entries should be individually valid."""
+        """All 28 entries should be individually valid."""
         report = validate_knowledge()
-        assert report.valid_entries == 18
+        assert report.valid_entries == 28
 
     def test_real_kb_has_expected_categories(self):
         """The real KB should contain key categories."""

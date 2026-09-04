@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-09-03T09:57:03.702825+00:00",
-  "test_dataset": "C:\\Users\\Chetna\\Documents\\Codex\\2026-09-03\\bank-assistant-chat-bot-whole-plane\\evaluation\\test_queries.json",
-  "model_artifact": "C:\\Users\\Chetna\\Documents\\Codex\\2026-09-03\\bank-assistant-chat-bot-whole-plane\\models\\intent_classifier.joblib",
+  "timestamp": "2026-09-03T17:52:30.450008+00:00",
+  "test_dataset": "C:\\Users\\shiva\\Desktop\\nlp\\NLP_BANKING-ASSISTANT\\evaluation\\test_queries.json",
+  "model_artifact": "C:\\Users\\shiva\\Desktop\\nlp\\NLP_BANKING-ASSISTANT\\models\\intent_classifier.joblib",
   "total_queries": 45,
   "top1_hits": 41,
   "top1_accuracy": 0.9111,

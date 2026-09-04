@@ -24,15 +24,18 @@ PHRASE_NORMALIZATION: List[Tuple[re.Pattern, str]] = [
     # Zero balance phrases
     (re.compile(r"\b(minimum\s+balance\s+nahi|zero\s+balance|no\s+minimum\s+balance|bina\s+balance|balance\s+maintain\s+nahi|जीरो\s+बैलेंस|बिना\s+बैलेंस)\b", re.IGNORECASE), "zero_minimum_balance"),
     
+    # Zero interest / 1-month credit phrases
+    (re.compile(r"\b(zero\s+int(e)?rest\s*(loan|load|credit)|0%?\s*int(e)?rest\s*(loan|load)|interest\s+free\s+(loan|load)|bina\s+byaj\s+(ka\s+)?(loan|karz)|बिना\s+ब्याज\s+(का\s+)?लोन)\b", re.IGNORECASE), "zero_interest_credit"),
+
     # Loan requirement phrases
-    (re.compile(r"\b(loan\s+chahiye|karz\s+chahiye|udhaar\s+chahiye|loan\s+lena\s+hai|paise\s+chahiye|लोन\s+चाहिए|कर्ज\s+चाहिए|उधार\s+चाहिए|ऋण\s+चाहिए)\b", re.IGNORECASE), "loan_required"),
+    (re.compile(r"\b(loan\s+chahiye|karz\s+chahiye|udhaar\s+chahiye|loan\s+lena\s+hai|paise\s+chahiye|load\s+chahiye|लोन\s+चाहिए|कर्ज\s+चाहिए|उधार\s+चाहिए|ऋण\s+चाहिए)\b", re.IGNORECASE), "loan_required"),
     
     # Specific loan types in English/Hinglish/Devanagari
-    (re.compile(r"\b(education\s+loan|padhai\s+(ke\s+liye\s+)?loan|study\s+loan|college\s+(ke\s+liye\s+)?loan|पढ़ाई\s+(के\s+लिए\s+)?लोन|शिक्षा\s+ऋण)\b", re.IGNORECASE), "education_loan"),
-    (re.compile(r"\b(home\s+loan|ghar\s+(ke\s+liye\s+)?loan|makaan\s+(ke\s+liye\s+)?loan|house\s+loan|होम\s+लोन|घर\s+(के\s+लिए\s+)?लोन)\b", re.IGNORECASE), "home_loan"),
-    (re.compile(r"\b(personal\s+loan|personal\s+kharch|पर्सनल\s+लोन)\b", re.IGNORECASE), "personal_loan"),
-    (re.compile(r"\b(business\s+loan|karobar\s+(ke\s+liye\s+)?loan|vyapar\s+(ke\s+liye\s+)?loan|dukaan\s+(ke\s+liye\s+)?loan|दुकान\s+(के\s+लिए\s+)?लोन|व्यापार\s+(के\s+लिए\s+)?लोन)\b", re.IGNORECASE), "business_loan"),
-    (re.compile(r"\b(agriculture\s+loan|kisan\s+loan|kheti\s+(ke\s+liye\s+)?loan|crop\s+loan|किसान\s+लोन|कृषि\s+ऋण)\b", re.IGNORECASE), "agriculture_loan"),
+    (re.compile(r"\b(education\s+(loan|load)|padhai\s+(ke\s+liye\s+)?(loan|load)|study\s+(loan|load)|college\s+(ke\s+liye\s+)?(loan|load)|पढ़ाई\s+(के\s+लिए\s+)?लोन|शिक्षा\s+ऋण)\b", re.IGNORECASE), "education_loan"),
+    (re.compile(r"\b(home\s+(loan|load)|ghar\s+(ke\s+liye\s+)?(loan|load)|makaan\s+(ke\s+liye\s+)?(loan|load)|house\s+(loan|load)|होम\s+लोन|घर\s+(के\s+लिए\s+)?लोन)\b", re.IGNORECASE), "home_loan"),
+    (re.compile(r"\b(personal\s+(loan|load)|personal\s+kharch|पर्सनल\s+लोन)\b", re.IGNORECASE), "personal_loan"),
+    (re.compile(r"\b(business\s+(loan|load)|karobar\s+(ke\s+liye\s+)?(loan|load)|vyapar\s+(ke\s+liye\s+)?(loan|load)|dukaan\s+(ke\s+liye\s+)?(loan|load)|दुकान\s+(के\s+लिए\s+)?लोन|व्यापार\s+(के\s+लिए\s+)?लोन)\b", re.IGNORECASE), "business_loan"),
+    (re.compile(r"\b(agriculture\s+(loan|load)|kisan\s+(loan|load)|kheti\s+(ke\s+liye\s+)?(loan|load)|crop\s+(loan|load)|किसान\s+लोन|कृषि\s+ऋण)\b", re.IGNORECASE), "agriculture_loan"),
     
     # ATM / UPI problem phrases
     (re.compile(r"\b(paisa\s+kat\s+gaya|paise\s+kat\s+gaye|amount\s+debited|money\s+deducted|paisa\s+cut\s+gaya|पैसे\s+कट\s+गए|पैन\s+कट\s+गया)\b", re.IGNORECASE), "amount_debited"),
@@ -51,6 +54,26 @@ PHRASE_NORMALIZATION: List[Tuple[re.Pattern, str]] = [
     (re.compile(r"\b(girl\s+child|beti\s+(ke\s+liye)?|kanya\s+(ke\s+liye)?|बेटी\s+(के\s+लिए)?|कन्या\s+(के\s+लिए)?)\b", re.IGNORECASE), "girl_child"),
     (re.compile(r"\b(senior\s+citizen|buzurg|vridhha?|वरिष्ठ\s+नागरिक|बुजुर्ग)\b", re.IGNORECASE), "senior_citizen"),
     (re.compile(r"\b(woman\s+entrepreneur|mahila\s+udyami|महिला\s+उद्यमी)\b", re.IGNORECASE), "woman_entrepreneur"),
+
+    # Bank Multi-word Names
+    (re.compile(r"\b(state\s+bank\s+of\s+india|state\s+bank|sbi\s+bank|भारतीय\s+स्टेट\s+बैंक)\b", re.IGNORECASE), "sbi"),
+    (re.compile(r"\b(punjab\s+national\s+bank|pnb\s+bank|पंजाब\s+नेशनल\s+बैंक)\b", re.IGNORECASE), "pnb"),
+    (re.compile(r"\b(bank\s+of\s+baroda|bob\s+bank|बैंक\s+ऑफ\s+बड़ौदा|बड़ौदा\s+बैंक)\b", re.IGNORECASE), "bob"),
+    (re.compile(r"\b(canara\s+bank|केनरा\s+बैंक)\b", re.IGNORECASE), "canara"),
+    (re.compile(r"\b(union\s+bank(\s+of\s+india)?|यूनियन\s+बैंक)\b", re.IGNORECASE), "union"),
+    (re.compile(r"\b(indian\s+bank|इंडियन\s+बैंक)\b", re.IGNORECASE), "indian"),
+    (re.compile(r"\b(bank\s+of\s+india|boi\s+bank|बैंक\s+ऑफ\s+इंडिया)\b", re.IGNORECASE), "boi"),
+    (re.compile(r"\b(kotak\s+mahindra(\s+bank)?|kotak\s+811|कोटक\s+महिंद्रा)\b", re.IGNORECASE), "kotak"),
+    (re.compile(r"\b(axis\s+bank|एक्सिस\s+बैंक)\b", re.IGNORECASE), "axis"),
+    (re.compile(r"\b(hdfc\s+bank|एचडीएफसी\s+बैंक)\b", re.IGNORECASE), "hdfc"),
+    (re.compile(r"\b(icici\s+bank|आईसीआईसीआई\s+बैंक)\b", re.IGNORECASE), "icici"),
+    (re.compile(r"\b(indusind\s+bank|इंडसइंड\s+बैंक)\b", re.IGNORECASE), "indusind"),
+    (re.compile(r"\b(idfc\s+first(\s+bank)?|idfc\s+bank)\b", re.IGNORECASE), "idfc"),
+    (re.compile(r"\b(au\s+small\s+finance(\s+bank)?|au\s+bank|au\s+sfb)\b", re.IGNORECASE), "ausfb"),
+    (re.compile(r"\b(equitas\s+small\s+finance(\s+bank)?|equitas\s+bank)\b", re.IGNORECASE), "equitas"),
+    (re.compile(r"\b(standard\s+chartered(\s+bank)?|stanchart)\b", re.IGNORECASE), "scb"),
+    (re.compile(r"\b(hsbc(\s+bank|\s+india)?)\b", re.IGNORECASE), "hsbc"),
+    (re.compile(r"\b(india\s+post\s+payments?\s+bank|post\s+office\s+bank|ippb)\b", re.IGNORECASE), "ippb"),
 ]
 
 
@@ -68,6 +91,14 @@ BANKING_ABBREVIATIONS: Dict[str, str] = {
     "pmjjby": "pmjjby",
     "ppf": "public_provident_fund",
     "nps": "national_pension_system",
+    "scss": "senior_citizens_savings_scheme",
+    "mssc": "mahila_samman_savings_certificate",
+    "pomis": "post_office_monthly_income_scheme",
+    "nsc": "national_savings_certificate",
+    "kvp": "kisan_vikas_patra",
+    "pmfby": "crop_insurance",
+    "cgtmse": "msme_credit_guarantee",
+    "pmay": "home_loan_subsidy",
     "emi": "emi",
     "roi": "interest_rate",
     "kyc": "kyc",
@@ -81,6 +112,21 @@ BANKING_ABBREVIATIONS: Dict[str, str] = {
     "pnb": "pnb",
     "hdfc": "hdfc",
     "icici": "icici",
+    "bob": "bob",
+    "axis": "axis",
+    "kotak": "kotak",
+    "canara": "canara",
+    "union": "union",
+    "indian": "indian",
+    "boi": "boi",
+    "indusind": "indusind",
+    "idfc": "idfc",
+    "ausfb": "ausfb",
+    "equitas": "equitas",
+    "scb": "scb",
+    "hsbc": "hsbc",
+    "ippb": "ippb",
+    "811": "kotak",
     "rbi": "rbi",
     "dbt": "direct_benefit_transfer",
 }
@@ -280,15 +326,34 @@ def extract_preserved_financials(text: str) -> Dict[str, Any]:
     return results
 
 
+# ---------------------------------------------------------------------------
+# Common Conversational Banking Typos & Spelling Normalization
+# ---------------------------------------------------------------------------
+TYPO_NORMALIZATION: List[Tuple[re.Pattern, str]] = [
+    (re.compile(r"\b(load|loam|laon|lone|lons)\b", re.IGNORECASE), "loan"),
+    (re.compile(r"\b(intrest|intrst|byaj|byaaj|byaaz)\b", re.IGNORECASE), "interest"),
+    (re.compile(r"\b(accont|acount|accout|a/c)\b", re.IGNORECASE), "account"),
+    (re.compile(r"\b(deposite|depost|dipsit)\b", re.IGNORECASE), "deposit"),
+    (re.compile(r"\b(moni|mony|paisa|paise|rupaye|rupee|rupees)\b", re.IGNORECASE), "money"),
+    (re.compile(r"\b(scame|frod|fraude|dhokha|dhoka)\b", re.IGNORECASE), "fraud"),
+    (re.compile(r"\b(cheq|cheqe)\b", re.IGNORECASE), "cheque"),
+    (re.compile(r"\b(transction|transation|trnxs?)\b", re.IGNORECASE), "transaction"),
+    (re.compile(r"\b(eligiblity|elegible|elgible)\b", re.IGNORECASE), "eligibility"),
+    (re.compile(r"\b(documnts|kagas|kagaz|dastavez)\b", re.IGNORECASE), "documents"),
+    (re.compile(r"\b(studnt|collg|colleage)\b", re.IGNORECASE), "student"),
+]
+
+
 def normalize_text(text: str) -> str:
     """
     Normalize raw user input string:
       1. Lowercase
       2. Currency symbols to canonical markers
-      3. Multi-word banking phrase normalization
-      4. Banking abbreviation expansion
-      5. Single-word Hindi/Hinglish synonym mapping
-      6. Clean extra punctuation while keeping canonical words
+      3. Multi-word banking phrase normalization (applied first)
+      4. Typo auto-correction
+      5. Banking abbreviation expansion
+      6. Single-word Hindi/Hinglish synonym mapping
+      7. Clean extra punctuation while keeping canonical words
     """
     if not text:
         return ""
@@ -303,11 +368,15 @@ def normalize_text(text: str) -> str:
     for pattern, replacement in PHRASE_NORMALIZATION:
         normalized = pattern.sub(f" {replacement} ", normalized)
 
-    # 4. Remove unwanted punctuation, preserving letters, digits, and underscores
+    # 4. Apply typo corrections
+    for pattern, replacement in TYPO_NORMALIZATION:
+        normalized = pattern.sub(f" {replacement} ", normalized)
+
+    # 5. Remove unwanted punctuation, preserving letters, digits, and underscores
     normalized = re.sub(r"[^\w\s%₹]", " ", normalized)
     normalized = re.sub(r"\s+", " ", normalized).strip()
 
-    # 5. Token-by-token abbreviation and single-word synonym normalization
+    # 6. Token-by-token abbreviation and single-word synonym normalization
     tokens = normalized.split()
     processed_tokens: List[str] = []
 

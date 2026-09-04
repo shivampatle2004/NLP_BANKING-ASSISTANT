@@ -1,0 +1,1051 @@
+{
+  "metadata": {
+    "title": "BankSathi Indian Banking Intelligence Database",
+    "version": "2.0.0",
+    "lastVerified": "2026-09-04",
+    "disclaimer": "Interest rates, minimum balance requirements, loan APRs, and charges are based on latest verified benchmarks from official regulatory portals and bank schedules. Actual rates may vary based on credit score, tenure, and branch location."
+  },
+  "banks": [
+    {
+      "id": "sbi",
+      "name": "State Bank of India",
+      "shortName": "SBI",
+      "type": "Public Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "The Banker to Every Indian",
+      "logoColor": "#1A4F8A",
+      "established": 1955,
+      "branchCount": "22,500+",
+      "savings": {
+        "minBalance": {
+          "metro": 0,
+          "urban": 0,
+          "semiUrban": 0,
+          "rural": 0,
+          "notes": "SBI permanently waived all Average Monthly Balance (AMB) non-maintenance penalties across all branches."
+        },
+        "interestRate": {
+          "upTo10Lakh": 2.70,
+          "above10Lakh": 3.00
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.80, "seniorCitizen": 7.30 },
+        "rate3Year": { "general": 6.75, "seniorCitizen": 7.25 },
+        "rate5Year": { "general": 6.50, "seniorCitizen": 7.50 },
+        "specialScheme": {
+          "name": "Amrit Kalash (400 Days)",
+          "generalRate": 7.10,
+          "seniorRate": 7.60,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.50,
+          "benchmarkType": "External Benchmark Linked Rate (EBLR)",
+          "processingFee": "0.17% to 0.35% + GST (Min ₹2,000, Max ₹10,000)"
+        },
+        "personalLoan": { "startingRate": 11.15, "maxTenureYears": 6 },
+        "educationLoan": {
+          "startingRate": 8.15,
+          "features": "SBI Student Loan / Scholar Scheme; 0.50% interest concession for female students."
+        },
+        "carLoan": { "startingRate": 8.75, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 20000,
+        "dailyPosLimit": 50000,
+        "annualFee": "₹125 + GST (Classic/Global RuPay)"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 1234", "1800 2100", "1800 11 2211"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 567676",
+        "netBankingUrl": "https://www.onlinesbi.sbi/",
+        "officialWebsite": "https://sbi.co.in/"
+      }
+    },
+    {
+      "id": "pnb",
+      "name": "Punjab National Bank",
+      "shortName": "PNB",
+      "type": "Public Sector",
+      "headquarters": "New Delhi",
+      "tagline": "The Name You Can Bank Upon",
+      "logoColor": "#A31D24",
+      "established": 1894,
+      "branchCount": "10,000+",
+      "savings": {
+        "minBalance": {
+          "metro": 2000,
+          "urban": 1000,
+          "semiUrban": 500,
+          "rural": 500,
+          "notes": "Quarterly Average Balance (QAB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 2.70,
+          "above10Lakh": 2.75
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.80, "seniorCitizen": 7.30 },
+        "rate3Year": { "general": 7.00, "seniorCitizen": 7.50 },
+        "rate5Year": { "general": 6.50, "seniorCitizen": 7.00 },
+        "specialScheme": {
+          "name": "PNB Uttam (Non-Callable) / 400 Days",
+          "generalRate": 7.25,
+          "seniorRate": 7.75,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.45,
+          "benchmarkType": "Repo Linked Lending Rate (RLLR)",
+          "processingFee": "0.35% (Min ₹2,500, Max ₹15,000) + GST (often waived in festive offers)"
+        },
+        "personalLoan": { "startingRate": 11.40, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 8.20,
+          "features": "PNB Saraswati / Udaan; 0.50% concession for girl students."
+        },
+        "carLoan": { "startingRate": 8.75, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 25000,
+        "dailyPosLimit": 60000,
+        "annualFee": "₹150 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 180 2222", "1800 103 2222"],
+        "smsCardBlock": "SMS 'HOT <Card Number>' to 5607040",
+        "netBankingUrl": "https://netpnb.com/",
+        "officialWebsite": "https://www.pnbindia.in/"
+      }
+    },
+    {
+      "id": "bob",
+      "name": "Bank of Baroda",
+      "shortName": "BOB",
+      "type": "Public Sector",
+      "headquarters": "Vadodara, Gujarat",
+      "tagline": "India's International Bank",
+      "logoColor": "#F26522",
+      "established": 1908,
+      "branchCount": "8,200+",
+      "savings": {
+        "minBalance": {
+          "metro": 2000,
+          "urban": 1000,
+          "semiUrban": 500,
+          "rural": 500,
+          "notes": "Quarterly Average Balance (QAB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 2.75,
+          "above10Lakh": 2.90
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.85, "seniorCitizen": 7.35 },
+        "rate3Year": { "general": 7.15, "seniorCitizen": 7.65 },
+        "rate5Year": { "general": 6.50, "seniorCitizen": 7.15 },
+        "specialScheme": {
+          "name": "Baroda Tiranga Plus (399 Days)",
+          "generalRate": 7.15,
+          "seniorRate": 7.65,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.40,
+          "benchmarkType": "Baroda Repo Linked Lending Rate (BRLLR)",
+          "processingFee": "0.25% to 0.50% (Min ₹2,500, Max ₹25,000) + GST"
+        },
+        "personalLoan": { "startingRate": 10.90, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 8.15,
+          "features": "Baroda Scholar & Baroda Vidya; zero processing fee for premier institutions."
+        },
+        "carLoan": { "startingRate": 8.70, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 25000,
+        "dailyPosLimit": 50000,
+        "annualFee": "₹150 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 5700", "1800 5000"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 8422009988",
+        "netBankingUrl": "https://www.bobibanking.com/",
+        "officialWebsite": "https://www.bankofbaroda.in/"
+      }
+    },
+    {
+      "id": "canara",
+      "name": "Canara Bank",
+      "shortName": "Canara",
+      "type": "Public Sector",
+      "headquarters": "Bengaluru, Karnataka",
+      "tagline": "Together We Can",
+      "logoColor": "#0091DA",
+      "established": 1906,
+      "branchCount": "9,600+",
+      "savings": {
+        "minBalance": {
+          "metro": 1000,
+          "urban": 1000,
+          "semiUrban": 500,
+          "rural": 500,
+          "notes": "Average Monthly Balance (AMB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 2.90,
+          "above10Lakh": 2.95
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.85, "seniorCitizen": 7.35 },
+        "rate3Year": { "general": 6.80, "seniorCitizen": 7.30 },
+        "rate5Year": { "general": 6.70, "seniorCitizen": 7.20 },
+        "specialScheme": {
+          "name": "Canara 444 Days Super Deposit",
+          "generalRate": 7.25,
+          "seniorRate": 7.75,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.40,
+          "benchmarkType": "Repo Linked Lending Rate (RLLR)",
+          "processingFee": "0.50% (Min ₹1,500, Max ₹10,000) + GST"
+        },
+        "personalLoan": { "startingRate": 11.25, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 8.25,
+          "features": "IBA Model Education Scheme with CSIS interest subsidy."
+        },
+        "carLoan": { "startingRate": 8.70, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 40000,
+        "dailyPosLimit": 100000,
+        "annualFee": "₹150 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 425 0018", "1800 1030 018"],
+        "smsCardBlock": "SMS 'CAN <last 4 digits> BLOCK' to 9266623333",
+        "netBankingUrl": "https://canarabank.com/net-banking",
+        "officialWebsite": "https://canarabank.com/"
+      }
+    },
+    {
+      "id": "union",
+      "name": "Union Bank of India",
+      "shortName": "Union",
+      "type": "Public Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "Good People to Bank With",
+      "logoColor": "#003366",
+      "established": 1919,
+      "branchCount": "8,500+",
+      "savings": {
+        "minBalance": {
+          "metro": 1000,
+          "urban": 1000,
+          "semiUrban": 500,
+          "rural": 250,
+          "notes": "Quarterly Average Balance (QAB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 2.75,
+          "above10Lakh": 2.90
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.75, "seniorCitizen": 7.25 },
+        "rate3Year": { "general": 6.70, "seniorCitizen": 7.20 },
+        "rate5Year": { "general": 6.50, "seniorCitizen": 7.00 },
+        "specialScheme": {
+          "name": "Union Samriddhi (399 Days)",
+          "generalRate": 7.25,
+          "seniorRate": 7.75,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.35,
+          "benchmarkType": "External Benchmark Lending Rate (EBLR)",
+          "processingFee": "0.50% (Max ₹15,000) + GST"
+        },
+        "personalLoan": { "startingRate": 11.35, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 8.10,
+          "features": "Union Education Scheme with 0.50% concession for girl students."
+        },
+        "carLoan": { "startingRate": 8.70, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 25000,
+        "dailyPosLimit": 50000,
+        "annualFee": "₹150 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 22 2244", "1800 208 2244"],
+        "smsCardBlock": "SMS 'UBLOCK <last 4 digits>' to 09223008486",
+        "netBankingUrl": "https://www.unionbankonline.co.in/",
+        "officialWebsite": "https://www.unionbankofindia.co.in/"
+      }
+    },
+    {
+      "id": "indian",
+      "name": "Indian Bank",
+      "shortName": "Indian",
+      "type": "Public Sector",
+      "headquarters": "Chennai, Tamil Nadu",
+      "tagline": "Taking Banking Technology to the Common Man",
+      "logoColor": "#134B96",
+      "established": 1907,
+      "branchCount": "5,800+",
+      "savings": {
+        "minBalance": {
+          "metro": 1000,
+          "urban": 500,
+          "semiUrban": 250,
+          "rural": 100,
+          "notes": "Monthly Average Balance (MAB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 2.80,
+          "above10Lakh": 2.90
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.70, "seniorCitizen": 7.20 },
+        "rate3Year": { "general": 6.50, "seniorCitizen": 7.00 },
+        "rate5Year": { "general": 6.25, "seniorCitizen": 6.75 },
+        "specialScheme": {
+          "name": "Ind Super (400 Days)",
+          "generalRate": 7.25,
+          "seniorRate": 7.75,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.40,
+          "benchmarkType": "Repo Linked Lending Rate (RLLR)",
+          "processingFee": "0.25% + GST"
+        },
+        "personalLoan": { "startingRate": 11.20, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 8.15,
+          "features": "IB Vidya Shobha Scheme with interest subsidy support."
+        },
+        "carLoan": { "startingRate": 8.65, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 25000,
+        "dailyPosLimit": 50000,
+        "annualFee": "₹150 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 425 00 000"],
+        "smsCardBlock": "SMS 'BLOCK <Card Number>' to 9230000000",
+        "netBankingUrl": "https://www.indianbank.net.in/",
+        "officialWebsite": "https://www.indianbank.in/"
+      }
+    },
+    {
+      "id": "boi",
+      "name": "Bank of India",
+      "shortName": "BOI",
+      "type": "Public Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "Relationship Beyond Banking",
+      "logoColor": "#D0202F",
+      "established": 1906,
+      "branchCount": "5,100+",
+      "savings": {
+        "minBalance": {
+          "metro": 1000,
+          "urban": 1000,
+          "semiUrban": 500,
+          "rural": 500,
+          "notes": "Quarterly Average Balance (QAB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 2.75,
+          "above10Lakh": 2.90
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.80, "seniorCitizen": 7.30 },
+        "rate3Year": { "general": 6.75, "seniorCitizen": 7.25 },
+        "rate5Year": { "general": 6.50, "seniorCitizen": 7.00 },
+        "specialScheme": {
+          "name": "Star Dhanvriddhi (333 Days)",
+          "generalRate": 7.25,
+          "seniorRate": 7.75,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.30,
+          "benchmarkType": "Repo Based Lending Rate (RBLR)",
+          "processingFee": "0.25% (Min ₹1,500, Max ₹20,000) + GST"
+        },
+        "personalLoan": { "startingRate": 10.85, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 8.20,
+          "features": "Star Education Loan for premier domestic and international institutes."
+        },
+        "carLoan": { "startingRate": 8.75, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 25000,
+        "dailyPosLimit": 50000,
+        "annualFee": "₹150 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 103 1906", "1800 220 229"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 9870888888",
+        "netBankingUrl": "https://starconnectcbs.bankofindia.com/",
+        "officialWebsite": "https://www.bankofindia.co.in/"
+      }
+    },
+    {
+      "id": "hdfc",
+      "name": "HDFC Bank",
+      "shortName": "HDFC",
+      "type": "Private Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "We Understand Your World",
+      "logoColor": "#004B87",
+      "established": 1994,
+      "branchCount": "8,700+",
+      "savings": {
+        "minBalance": {
+          "metro": 10000,
+          "urban": 10000,
+          "semiUrban": 5000,
+          "rural": 2500,
+          "notes": "Average Monthly Balance (AMB) or Fixed Deposit link."
+        },
+        "interestRate": {
+          "upTo10Lakh": 3.00,
+          "above10Lakh": 3.50
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.60, "seniorCitizen": 7.10 },
+        "rate3Year": { "general": 7.00, "seniorCitizen": 7.50 },
+        "rate5Year": { "general": 7.00, "seniorCitizen": 7.50 },
+        "specialScheme": {
+          "name": "Special 55-Month FD",
+          "generalRate": 7.20,
+          "seniorRate": 7.70,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.70,
+          "benchmarkType": "Policy Repo Linked Benchmark Rate (RPLR)",
+          "processingFee": "Up to 0.50% of loan amount or ₹3,000, whichever is higher + GST"
+        },
+        "personalLoan": { "startingRate": 10.50, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 9.50,
+          "features": "HDFC Credila education financing with up to 100% cover for overseas studies."
+        },
+        "carLoan": { "startingRate": 8.90, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 50000,
+        "dailyPosLimit": 275000,
+        "annualFee": "₹200 + GST (Millennia/EasyShop Platinum)"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 1600", "1800 2600", "1800 202 6161"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 5676712",
+        "netBankingUrl": "https://netbanking.hdfcbank.com/",
+        "officialWebsite": "https://www.hdfcbank.com/"
+      }
+    },
+    {
+      "id": "icici",
+      "name": "ICICI Bank",
+      "shortName": "ICICI",
+      "type": "Private Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "Hum Hai Na, Khayal Aapka",
+      "logoColor": "#B02A30",
+      "established": 1994,
+      "branchCount": "6,500+",
+      "savings": {
+        "minBalance": {
+          "metro": 10000,
+          "urban": 10000,
+          "semiUrban": 5000,
+          "rural": 2000,
+          "notes": "Monthly Average Balance (MAB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 3.00,
+          "above10Lakh": 3.50
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.70, "seniorCitizen": 7.20 },
+        "rate3Year": { "general": 7.00, "seniorCitizen": 7.50 },
+        "rate5Year": { "general": 7.00, "seniorCitizen": 7.50 },
+        "specialScheme": {
+          "name": "ICICI Golden Years FD (5 Years+)",
+          "generalRate": 7.00,
+          "seniorRate": 7.50,
+          "validity": "Special High-Yield Senior Benefit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.75,
+          "benchmarkType": "I-Repo Linked Benchmark Lending Rate (I-RRR)",
+          "processingFee": "0.50% to 1.00% (Min ₹3,000) + GST"
+        },
+        "personalLoan": { "startingRate": 10.75, "maxTenureYears": 6 },
+        "educationLoan": {
+          "startingRate": 9.50,
+          "features": "Pre-approved education loans for premier domestic and foreign universities."
+        },
+        "carLoan": { "startingRate": 8.85, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 50000,
+        "dailyPosLimit": 200000,
+        "annualFee": "₹150 to ₹300 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 1080", "1800 2008"],
+        "smsCardBlock": "SMS 'IBLOCK <last 4 digits>' to 5676766",
+        "netBankingUrl": "https://infinity.icicibank.com/",
+        "officialWebsite": "https://www.icicibank.com/"
+      }
+    },
+    {
+      "id": "axis",
+      "name": "Axis Bank",
+      "shortName": "Axis",
+      "type": "Private Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "Dil Se Open",
+      "logoColor": "#861F41",
+      "established": 1993,
+      "branchCount": "5,300+",
+      "savings": {
+        "minBalance": {
+          "metro": 10000,
+          "urban": 10000,
+          "semiUrban": 5000,
+          "rural": 2500,
+          "notes": "Average Monthly Balance (AMB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 3.00,
+          "above10Lakh": 3.50
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.70, "seniorCitizen": 7.20 },
+        "rate3Year": { "general": 7.10, "seniorCitizen": 7.60 },
+        "rate5Year": { "general": 7.00, "seniorCitizen": 7.75 },
+        "specialScheme": {
+          "name": "Axis Express FD / 17 Months",
+          "generalRate": 7.20,
+          "seniorRate": 7.75,
+          "validity": "Special High-Yield Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.75,
+          "benchmarkType": "Repo Linked Lending Rate (RLLR)",
+          "processingFee": "Up to 1.00% (Min ₹10,000) + GST"
+        },
+        "personalLoan": { "startingRate": 10.49, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 9.25,
+          "features": "Prime education loans with no collateral up to ₹50 Lakh for top institutes."
+        },
+        "carLoan": { "startingRate": 8.95, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 40000,
+        "dailyPosLimit": 100000,
+        "annualFee": "₹250 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1860 419 5555", "1860 500 5555", "1800 103 5577"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 5676782",
+        "netBankingUrl": "https://retail.axisbank.co.in/",
+        "officialWebsite": "https://www.axisbank.com/"
+      }
+    },
+    {
+      "id": "kotak",
+      "name": "Kotak Mahindra Bank",
+      "shortName": "Kotak",
+      "type": "Private Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "Let's Make Money Simple",
+      "logoColor": "#ED1C24",
+      "established": 2003,
+      "branchCount": "1,900+",
+      "savings": {
+        "minBalance": {
+          "metro": 0,
+          "urban": 0,
+          "semiUrban": 0,
+          "rural": 0,
+          "notes": "Kotak 811 account is 100% digital zero balance; regular Edge account requires ₹10,000 AMB."
+        },
+        "interestRate": {
+          "upTo10Lakh": 3.50,
+          "above10Lakh": 4.00
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 7.10, "seniorCitizen": 7.60 },
+        "rate3Year": { "general": 7.00, "seniorCitizen": 7.50 },
+        "rate5Year": { "general": 6.20, "seniorCitizen": 6.70 },
+        "specialScheme": {
+          "name": "Kotak 390 Days FD",
+          "generalRate": 7.40,
+          "seniorRate": 7.90,
+          "validity": "Special High-Yield Peak Rate"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.70,
+          "benchmarkType": "Repo Linked Rate (RLR)",
+          "processingFee": "0.50% + GST"
+        },
+        "personalLoan": { "startingRate": 10.99, "maxTenureYears": 5 },
+        "educationLoan": {
+          "startingRate": 9.50,
+          "features": "Kotak Education Loan for domestic and partner global universities."
+        },
+        "carLoan": { "startingRate": 8.90, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 40000,
+        "dailyPosLimit": 150000,
+        "annualFee": "Free Virtual Card for Kotak 811; Physical Card: ₹299 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1860 266 2666", "1800 209 0000"],
+        "smsCardBlock": "SMS 'DCCHOICE <last 4 digits> NO' to 9971056767",
+        "netBankingUrl": "https://netbanking.kotak.com/",
+        "officialWebsite": "https://www.kotak.com/"
+      }
+    },
+    {
+      "id": "indusind",
+      "name": "IndusInd Bank",
+      "shortName": "IndusInd",
+      "type": "Private Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "We Make You Feel Richer",
+      "logoColor": "#862633",
+      "established": 1994,
+      "branchCount": "2,600+",
+      "savings": {
+        "minBalance": {
+          "metro": 10000,
+          "urban": 10000,
+          "semiUrban": 5000,
+          "rural": 2500,
+          "notes": "Average Monthly Balance (AMB)."
+        },
+        "interestRate": {
+          "upTo10Lakh": 3.50,
+          "above10Lakh": 5.00
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 7.25, "seniorCitizen": 7.75 },
+        "rate3Year": { "general": 7.25, "seniorCitizen": 7.75 },
+        "rate5Year": { "general": 7.00, "seniorCitizen": 7.50 },
+        "specialScheme": {
+          "name": "IndusInd 1 Year 7 Months FD",
+          "generalRate": 7.75,
+          "seniorRate": 8.25,
+          "validity": "Special High-Yield Term"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.75,
+          "benchmarkType": "External Benchmark Linked Rate (EBLR)",
+          "processingFee": "0.50% to 1.00% + GST"
+        },
+        "personalLoan": { "startingRate": 10.49, "maxTenureYears": 5 },
+        "educationLoan": { "startingRate": 9.50, "features": "IndusInd Scholar Loan." },
+        "carLoan": { "startingRate": 8.95, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 50000,
+        "dailyPosLimit": 150000,
+        "annualFee": "₹250 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1860 500 5004", "1800 209 0061"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 5676757",
+        "netBankingUrl": "https://indusnet.indusind.com/",
+        "officialWebsite": "https://www.indusind.com/"
+      }
+    },
+    {
+      "id": "idfc",
+      "name": "IDFC FIRST Bank",
+      "shortName": "IDFC FIRST",
+      "type": "Private Sector",
+      "headquarters": "Mumbai, Maharashtra",
+      "tagline": "Always You First",
+      "logoColor": "#9B1C1C",
+      "established": 2015,
+      "branchCount": "900+",
+      "savings": {
+        "minBalance": {
+          "metro": 10000,
+          "urban": 10000,
+          "semiUrban": 5000,
+          "rural": 5000,
+          "notes": "Average Monthly Balance (AMB) with monthly interest credits."
+        },
+        "interestRate": {
+          "upTo10Lakh": 4.00,
+          "above10Lakh": 6.50
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 7.25, "seniorCitizen": 7.75 },
+        "rate3Year": { "general": 7.25, "seniorCitizen": 7.75 },
+        "rate5Year": { "general": 7.00, "seniorCitizen": 7.50 },
+        "specialScheme": {
+          "name": "IDFC FIRST 500 Days Super FD",
+          "generalRate": 7.75,
+          "seniorRate": 8.25,
+          "validity": "Special High-Yield Term"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.85,
+          "benchmarkType": "External Benchmark Linked Rate (EBLR)",
+          "processingFee": "0.50% (Max ₹10,000) + GST"
+        },
+        "personalLoan": { "startingRate": 10.49, "maxTenureYears": 5 },
+        "educationLoan": { "startingRate": 9.25, "features": "IDFC FIRST Education Loan." },
+        "carLoan": { "startingRate": 8.99, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 100000,
+        "dailyPosLimit": 400000,
+        "annualFee": "₹299 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 10 888", "1800 419 4332"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 56767321",
+        "netBankingUrl": "https://my.idfcfirstbank.com/login",
+        "officialWebsite": "https://www.idfcfirstbank.com/"
+      }
+    },
+    {
+      "id": "ausfb",
+      "name": "AU Small Finance Bank",
+      "shortName": "AU SFB",
+      "type": "Small Finance Bank",
+      "headquarters": "Jaipur, Rajasthan",
+      "tagline": "Badlaav Humse Hai",
+      "logoColor": "#7B1FA2",
+      "established": 1996,
+      "branchCount": "1,050+",
+      "savings": {
+        "minBalance": {
+          "metro": 5000,
+          "urban": 5000,
+          "semiUrban": 2000,
+          "rural": 1000,
+          "notes": "AU Digital Zero-Balance options available via video KYC."
+        },
+        "interestRate": {
+          "upTo10Lakh": 5.00,
+          "above10Lakh": 7.00
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 7.50, "seniorCitizen": 8.00 },
+        "rate3Year": { "general": 7.50, "seniorCitizen": 8.00 },
+        "rate5Year": { "general": 7.25, "seniorCitizen": 7.75 },
+        "specialScheme": {
+          "name": "AU Royale 18 Months Special FD",
+          "generalRate": 8.00,
+          "seniorRate": 8.50,
+          "validity": "Peak High-Yield SFB Return"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 9.25,
+          "benchmarkType": "External Benchmark Linked Rate (EBLR)",
+          "processingFee": "1.00% + GST"
+        },
+        "personalLoan": { "startingRate": 11.49, "maxTenureYears": 5 },
+        "educationLoan": { "startingRate": 10.00, "features": "AU Pragati Education Scheme." },
+        "carLoan": { "startingRate": 9.50, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 50000,
+        "dailyPosLimit": 200000,
+        "annualFee": "₹150 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 1200 1300"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 8422855555",
+        "netBankingUrl": "https://netbanking.aubank.in/",
+        "officialWebsite": "https://www.aubank.in/"
+      }
+    },
+    {
+      "id": "equitas",
+      "name": "Equitas Small Finance Bank",
+      "shortName": "Equitas",
+      "type": "Small Finance Bank",
+      "headquarters": "Chennai, Tamil Nadu",
+      "tagline": "It's Fun Banking",
+      "logoColor": "#008080",
+      "established": 2016,
+      "branchCount": "900+",
+      "savings": {
+        "minBalance": {
+          "metro": 0,
+          "urban": 0,
+          "semiUrban": 0,
+          "rural": 0,
+          "notes": "Equitas Selfie Zero-Balance Savings Account with up to 7.00% interest."
+        },
+        "interestRate": {
+          "upTo10Lakh": 5.50,
+          "above10Lakh": 7.25
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 7.75, "seniorCitizen": 8.25 },
+        "rate3Year": { "general": 7.50, "seniorCitizen": 8.00 },
+        "rate5Year": { "general": 7.25, "seniorCitizen": 7.75 },
+        "specialScheme": {
+          "name": "Equitas 444 Days Special Deposit",
+          "generalRate": 8.25,
+          "seniorRate": 8.75,
+          "validity": "Peak High-Yield Return"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 9.50,
+          "benchmarkType": "External Benchmark Linked Rate (EBLR)",
+          "processingFee": "1.00% + GST"
+        },
+        "personalLoan": { "startingRate": 11.99, "maxTenureYears": 5 },
+        "educationLoan": { "startingRate": 10.50, "features": "Equitas Higher Studies Loan." },
+        "carLoan": { "startingRate": 9.75, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 30000,
+        "dailyPosLimit": 100000,
+        "annualFee": "₹150 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 103 1222"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 8122381223",
+        "netBankingUrl": "https://www.equitasbank.com/net-banking",
+        "officialWebsite": "https://www.equitasbank.com/"
+      }
+    },
+    {
+      "id": "scb",
+      "name": "Standard Chartered Bank India",
+      "shortName": "StanChart",
+      "type": "Foreign / International",
+      "headquarters": "Mumbai, Maharashtra (India HQ)",
+      "tagline": "Here for good",
+      "logoColor": "#007A3D",
+      "established": 1858,
+      "branchCount": "100+",
+      "savings": {
+        "minBalance": {
+          "metro": 25000,
+          "urban": 25000,
+          "semiUrban": 25000,
+          "rural": 25000,
+          "notes": "Global priority & international wealth banking accounts."
+        },
+        "interestRate": {
+          "upTo10Lakh": 3.00,
+          "above10Lakh": 3.50
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.75, "seniorCitizen": 7.25 },
+        "rate3Year": { "general": 6.85, "seniorCitizen": 7.35 },
+        "rate5Year": { "general": 6.75, "seniorCitizen": 7.25 },
+        "specialScheme": {
+          "name": "StanChart Global Multi-Currency FD",
+          "generalRate": 7.15,
+          "seniorRate": 7.65,
+          "validity": "International Resident & NRI Deposit"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.80,
+          "benchmarkType": "External Benchmark Linked Rate (EBLR)",
+          "processingFee": "0.50% to 1.00% + GST"
+        },
+        "personalLoan": { "startingRate": 10.99, "maxTenureYears": 5 },
+        "educationLoan": { "startingRate": 9.50, "features": "Global overseas university financing." },
+        "carLoan": { "startingRate": 9.25, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 100000,
+        "dailyPosLimit": 300000,
+        "annualFee": "₹500 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 345 5000", "1800 425 1000"],
+        "smsCardBlock": "SMS 'BLOCK <last 4 digits>' to 9980033333",
+        "netBankingUrl": "https://retail.sc.com/in/nfs/login.htm",
+        "officialWebsite": "https://www.sc.com/in/"
+      }
+    },
+    {
+      "id": "hsbc",
+      "name": "HSBC India",
+      "shortName": "HSBC",
+      "type": "Foreign / International",
+      "headquarters": "Mumbai, Maharashtra (India HQ)",
+      "tagline": "Opening up a world of opportunity",
+      "logoColor": "#DB0011",
+      "established": 1853,
+      "branchCount": "30+",
+      "savings": {
+        "minBalance": {
+          "metro": 40000,
+          "urban": 40000,
+          "semiUrban": 40000,
+          "rural": 40000,
+          "notes": "Premier & Advance relationship accounts with global zero-fee international remittances."
+        },
+        "interestRate": {
+          "upTo10Lakh": 3.00,
+          "above10Lakh": 3.50
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.80, "seniorCitizen": 7.30 },
+        "rate3Year": { "general": 6.75, "seniorCitizen": 7.25 },
+        "rate5Year": { "general": 6.50, "seniorCitizen": 7.00 },
+        "specialScheme": {
+          "name": "HSBC Premier Term Deposit (732 Days)",
+          "generalRate": 7.25,
+          "seniorRate": 7.75,
+          "validity": "Premier Relationship Rate"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.75,
+          "benchmarkType": "Repo Linked Lending Rate (RLLR)",
+          "processingFee": "0.50% (Min ₹10,000) + GST"
+        },
+        "personalLoan": { "startingRate": 10.75, "maxTenureYears": 5 },
+        "educationLoan": { "startingRate": 9.25, "features": "Global student finance." },
+        "carLoan": { "startingRate": 9.10, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 100000,
+        "dailyPosLimit": 500000,
+        "annualFee": "₹500 + GST"
+      },
+      "customerSupport": {
+        "tollFree": ["1800 266 3456", "1800 120 4722"],
+        "smsCardBlock": "SMS 'BLOCK <Card Number>' to 56767",
+        "netBankingUrl": "https://www.hsbc.co.in/security/",
+        "officialWebsite": "https://www.hsbc.co.in/"
+      }
+    },
+    {
+      "id": "ippb",
+      "name": "India Post Payments Bank",
+      "shortName": "IPPB",
+      "type": "Payments Bank",
+      "headquarters": "New Delhi",
+      "tagline": "Aapka Bank, Aapke Dwaar",
+      "logoColor": "#D9232D",
+      "established": 2018,
+      "branchCount": "1,55,000+ Post Office Touchpoints",
+      "savings": {
+        "minBalance": {
+          "metro": 0,
+          "urban": 0,
+          "semiUrban": 0,
+          "rural": 0,
+          "notes": "100% Zero-Balance Account with doorstep banking across all 1.55 lakh Indian post offices."
+        },
+        "interestRate": {
+          "upTo10Lakh": 2.50,
+          "above10Lakh": 2.75
+        }
+      },
+      "fixedDeposit": {
+        "rate1Year": { "general": 6.90, "seniorCitizen": 7.40 },
+        "rate3Year": { "general": 7.10, "seniorCitizen": 7.60 },
+        "rate5Year": { "general": 7.50, "seniorCitizen": 8.00 },
+        "specialScheme": {
+          "name": "Post Office Term Deposit (POTD) 5-Year",
+          "generalRate": 7.50,
+          "seniorRate": 8.00,
+          "validity": "Government Guaranteed National Savings"
+        }
+      },
+      "loans": {
+        "homeLoan": {
+          "startingRate": 8.50,
+          "benchmarkType": "Partner Bank Linked Lending Rate",
+          "processingFee": "Nil to 0.50% (under partner tie-ups with PNB/SBI)"
+        },
+        "personalLoan": { "startingRate": 11.50, "maxTenureYears": 5 },
+        "educationLoan": { "startingRate": 8.50, "features": "Vidya Lakshmi partner link." },
+        "carLoan": { "startingRate": 8.80, "maxTenureYears": 7 }
+      },
+      "debitCard": {
+        "dailyAtmWithdrawalLimit": 25000,
+        "dailyPosLimit": 50000,
+        "annualFee": "₹25 + GST (Virtual RuPay Card)"
+      },
+      "customerSupport": {
+        "tollFree": ["155299", "1800 8899 860"],
+        "smsCardBlock": "SMS 'HOT <Account Number>' to 7738062873",
+        "netBankingUrl": "https://www.ippbonline.com/",
+        "officialWebsite": "https://www.ippbonline.com/"
+      }
+    }
+  ]
+}

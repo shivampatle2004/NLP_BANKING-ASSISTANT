@@ -65,8 +65,8 @@ async def test_health(client):
 
     # Knowledge base info
     kb = data["knowledge_base"]
-    assert kb["entries_loaded"] == 18
-    assert kb["last_verified"] == "2026-09-03"
+    assert kb["entries_loaded"] == 28
+    assert kb["last_verified"] == "2026-09-04"
 
 
 @pytest.mark.anyio
@@ -77,7 +77,7 @@ async def test_knowledge_status(client):
     data = response.json()
 
     assert data["status"] == "loaded"
-    assert data["total_entries"] == 18
+    assert data["total_entries"] == 28
 
     # Check some expected categories exist
     cats = data["categories"]
@@ -88,6 +88,6 @@ async def test_knowledge_status(client):
     # Check some expected IDs exist
     ids = data["entry_ids"]
     assert "pmjdy" in ids
-    assert "education" in ids
+    assert "education_loan" in ids
     assert "mudra" in ids
-    assert "cyber" in ids
+    assert "cyber_security" in ids
